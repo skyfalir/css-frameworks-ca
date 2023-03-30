@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+			async
+		></script>
+		<link rel="stylesheet" href="../src/scss/main.css" />
+
+		<title>Profile Page</title>
+	</head>
+	<body class="bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#"
+					><img src="../assets/img/Peek-1.png" alt="Logo"
+				/></a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="../feed/index.html">Feed</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../src/">
+								<img
+									src="../assets/img/user.png"
+									alt="Account"
+									class="account-icon"
+								/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<!-- Sidebar -->
+				<div class="col-md-3">
+					<div class="card">
+						<img
+							src="../assets/img/profile_temp.jpg"
+							class="card-img-top"
+							alt="Profile Image"
+						/>
+						<div class="card-body">
+							<h5 class="card-title">Username</h5>
+							<p class="card-text">Followers: 1000</p>
+							<p class="card-text">Following: 500</p>
+							<button type="button" class="btn btn-primary">Follow</button>
+							<button type="button" class="btn btn-outline-dark">Message</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Posts -->
+				<div class="col-md-9">
+					<div class="card bg-dark">
+						<div class="card-header">
+							<h5 class="card-title text-light text-center">User Posts</h5>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item text-center p-md-3">
+								<img src="#" alt="">
+								Meet my new furry friend! I just adopted this adorable
+								puppy and I couldn't be happier. What should I name him?
+							</li>
+							<li class="list-group-item text-center p-md-3">
+								<img src="#" alt="">
+								Just got back from an amazing hiking trip in the
+								mountains. The views were breathtaking and the fresh air
+								was invigorating. Can't wait to plan my next adventure!
+							</li>
+							<li class="list-group-item text-center p-md-3">
+								<img src="#" alt="">
+								I tried a new restaurant last night and it was amazing!
+								The food was delicious and the atmosphere was perfect for
+								a night out. If you're looking for a new place to try, I
+								highly recommend it!
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
