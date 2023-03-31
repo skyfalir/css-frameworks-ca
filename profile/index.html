@@ -13,7 +13,7 @@
 		<title>Profile Page</title>
 	</head>
 	<body class="bg-dark">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-black">
 			<div class="container">
 				<a class="navbar-brand" href="#"
 					><img src="../assets/img/Peek-1.png" alt="Logo"
@@ -32,7 +32,7 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="../feed/index.html">Feed</a>
+							<a class="nav-link" href="../feed">Feed</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link active" href="#">Profile</a>
@@ -51,52 +51,214 @@
 			</div>
 		</nav>
 
-		<div class="container">
-			<div class="row">
+		<div class="container-fluid p-0">
+			<div class="row m-2">
 				<!-- Sidebar -->
-				<div class="col-md-3">
-					<div class="card">
-						<img
-							src="../assets/img/profile_temp.jpg"
-							class="card-img-top"
-							alt="Profile Image"
-						/>
-						<div class="card-body">
-							<h5 class="card-title">Username</h5>
-							<p class="card-text">Followers: 1000</p>
-							<p class="card-text">Following: 500</p>
-							<button type="button" class="btn btn-primary">Follow</button>
-							<button type="button" class="btn btn-outline-dark">Message</button>
+				<div class="col-md-4 p-0 sidebar">
+					<div class="card bg-dark-subtle rounded-0">
+						<div class="row">
+							<div class="col">
+								<img
+									src="../assets/img/profile_temp.jpg"
+									class="card-img-top rounded-0"
+									alt="Profile Image"
+								/>
+								<div class="card-body text-center bg-dark text">
+									<h5 class="card-title text-secondary"><strong>Username</strong></h5>
+									<hr>
+									<p class="card-text text-secondary">
+										Followers: 1000
+									</p>
+									<p class="card-text text-secondary">Following: 500</p>
+									<button type="button" class="btn btn-secondary">
+										Follow
+									</button>
+									<button
+										type="button"
+										class="btn btn-outline-secondary"
+									>
+										Message
+									</button>
+								</div>
+								<div class="col">
+									<div class="card-body text-center bg-dark text">
+										<h5 class="card-title text-secondary"><strong>Bio</strong></h5>
+										<hr />
+										<p
+											class="card-text p-3 text-bg-secondary rounded-2"
+										>
+											🌎✈️ Front-end Developer with a passion for
+											traveling! 🤓📱 Always eager to learn and
+											create user-friendly interfaces. 🌟 Let's
+											connect and share our adventure stories! 🌴🌊
+											#travelbug #frontenddev.
+										</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 
 				<!-- Posts -->
-				<div class="col-md-9">
-					<div class="card bg-dark">
+				<div class="col-md-8 p-0">
+					<div class="card rounded-0 bg-dark">
 						<div class="card-header">
-							<h5 class="card-title text-light text-center">User Posts</h5>
+							<h5 class="card-title text-center text-light">User Posts</h5>
 						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item text-center p-md-3">
-								<img src="#" alt="">
-								Meet my new furry friend! I just adopted this adorable
-								puppy and I couldn't be happier. What should I name him?
-							</li>
-							<li class="list-group-item text-center p-md-3">
-								<img src="#" alt="">
-								Just got back from an amazing hiking trip in the
-								mountains. The views were breathtaking and the fresh air
-								was invigorating. Can't wait to plan my next adventure!
-							</li>
-							<li class="list-group-item text-center p-md-3">
-								<img src="#" alt="">
-								I tried a new restaurant last night and it was amazing!
-								The food was delicious and the atmosphere was perfect for
-								a night out. If you're looking for a new place to try, I
-								highly recommend it!
-							</li>
-						</ul>
+						<div class="container-fluid p-0 overflow-hidden">
+							<div class="row">
+								<div class="card-body mx-auto post">
+									<div class="card-body text-center">
+										<h5
+											class="card-title bg-body-tertiary p-3 rounded-top-3 m-0 text-secondary"
+										>
+											Post Title
+										</h5>
+										<img
+											src="https://picsum.photos/701"
+											alt="Post Image"
+											class="img-fluid rounded-0 card-img"
+										/>
+										<p
+											class="card-text mx-auto p-3 bg-body-tertiary text-light rounded-bottom-2"
+										>
+											Lorem ipsum dolor, sit amet consectetur
+											adipisicing elit. Similique debitis qui dolore
+											error delectus labore molestias dolorum
+											expedita laudantium, consectetur temporibus
+											porro quod illum dolor amet accusamus cum
+											voluptatum velit.
+										</p>
+										<div
+											class="d-flex justify-content-between accent p-md-3 rounded-2 align-items-center"
+										>
+											<div class="btn-group p-1">
+												<button
+													type="button"
+													class="btn btn-sm btn-outline-primary"
+												>
+													Like
+												</button>
+												<button
+													type="button"
+													class="btn btn-sm btn-outline-primary"
+												>
+													Comment
+												</button>
+											</div>
+											<small class="text-primary">
+												<span class="me-2">10 likes</span>
+												<span class="me-2">5 comments</span>
+											</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="container-fluid p-0 overflow-hidden">
+							<div class="row">
+								<div class="card-body mx-auto post">
+									<div class="card-body text-center">
+										<h5
+											class="card-title bg-body-tertiary p-3 rounded-top-3 m-0 text-secondary"
+										>
+											Post Title
+										</h5>
+										<img
+											src="https://picsum.photos/700"
+											alt="Post Image"
+											class="img-fluid rounded-0 card-img"
+										/>
+										<p
+											class="card-text mx-auto p-3 bg-body-tertiary text-light rounded-bottom-2"
+										>
+											Lorem ipsum dolor, sit amet consectetur
+											adipisicing elit. Similique debitis qui dolore
+											error delectus labore molestias dolorum
+											expedita laudantium, consectetur temporibus
+											porro quod illum dolor amet accusamus cum
+											voluptatum velit.
+										</p>
+										<div
+											class="d-flex justify-content-between accent p-md-3 rounded-2 align-items-center"
+										>
+											<div class="btn-group p-1">
+												<button
+													type="button"
+													class="btn btn-sm btn-outline-primary"
+												>
+													Like
+												</button>
+												<button
+													type="button"
+													class="btn btn-sm btn-outline-primary"
+												>
+													Comment
+												</button>
+											</div>
+											<small class="text-primary">
+												<span class="me-2">10 likes</span>
+												<span class="me-2">5 comments</span>
+											</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<div class="container-fluid p-0 overflow-hidden">
+							<div class="row">
+								<div class="card-body mx-auto post">
+									<div class="card-body text-center">
+										<h5
+											class="card-title bg-body-tertiary p-3 rounded-top-3 m-0 text-secondary"
+										>
+											Post Title
+										</h5>
+										<img
+											src="https://picsum.photos/702"
+											alt="Post Image"
+											class="img-fluid rounded-0 card-img"
+										/>
+										<p
+											class="card-text mx-auto p-3 bg-body-tertiary text-light rounded-bottom-2"
+										>
+											Lorem ipsum dolor, sit amet consectetur
+											adipisicing elit. Similique debitis qui dolore
+											error delectus labore molestias dolorum
+											expedita laudantium, consectetur temporibus
+											porro quod illum dolor amet accusamus cum
+											voluptatum velit.
+										</p>
+										<div
+											class="d-flex justify-content-between accent p-md-3 rounded-2 align-items-center"
+										>
+											<div class="btn-group p-1">
+												<button
+													type="button"
+													class="btn btn-sm btn-outline-primary"
+												>
+													Like
+												</button>
+												<button
+													type="button"
+													class="btn btn-sm btn-outline-primary"
+												>
+													Comment
+												</button>
+											</div>
+											<small class="text-primary">
+												<span class="me-2">10 likes</span>
+												<span class="me-2">5 comments</span>
+											</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr />
 					</div>
 				</div>
 			</div>

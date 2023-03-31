@@ -1,6 +1,8 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+
+
 * {
     font-family: 'Montserrat';
 }
@@ -9,28 +11,32 @@ nav img {
     width: 50px
 }
 
-body{
-    background-color: #1d282f;
+.login-page{
+    background-color: $primary;
     opacity: 1;
-    background-size: 57px 50px;
-    background-image:  repeating-linear-gradient(to right, #102229, #5696a0 2px, #1d282f 2px, #1d282f);
-}
-.card{
-    background: #7fecff;
-    color: #102229;
-    box-shadow: 2px 10px 12px #15181a8e;
+    background-size: 29.8px 10px;
+    background-image:  repeating-linear-gradient(to left, $primary, #3e818d 2px, $primary 2px, $primary);
 }
 
 .login{
-    background: #1f333b;
+    background: #101213;
     color: #999;
     max-width: 400px;
 }
 
 .form-control{
-    border: var(--bs-border-width) solid #5696a0; 
+    border: var(--bs-border-width) solid $cyan; 
 }
 .account-icon{
     width: 25px;
 
+}
+.post{
+    background-color: var(--c-primary);
+    max-width: 900px;
+}
+.accent{
+    background: rgb(0,213,255);
+    background: linear-gradient(45deg, $cyan 0%, rgb(77, 234, 255) 20%);
+    background-size: 500%;
 }
