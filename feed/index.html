@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../src/scss/main.css" />
 		<script src="../src/js/bootstrap.min.js" async></script>
-		<script type="module" src="/profile/index.mjs"></script>
+		<script type="module" src="/profile/index.mjs" defer></script>
 		<title>Feed Page</title>
 	</head>
 	<body class="bg-dark">
@@ -52,7 +52,9 @@
 				<div class="col-12 mb-4 rounded">
 					<h2 class="text-center m-2 text-secondary">Friends</h2>
 					<div id="myCarousel" class="carousel slide">
-						<div class="carousel-inner justify-content-around d-flex flex-nowrap">
+						<div
+							class="carousel-inner justify-content-around d-flex flex-nowrap"
+						>
 							<div class="carousel-item active">
 								<div class="row w-50">
 									<div class="col-4">
@@ -189,11 +191,10 @@
 				<hr class="border-secondary p-3" />
 			</div>
 			<div class="row">
-				
 				<div class="col-lg-12">
 					<div class="row d-flex justify-content-center">
-						<div class="create-post w-75 text-secondary">
-							<h3 class="text-secondary text-center pb-4">Create Post</h3>
+						<div class="create-post w-75 bg-dark rounded p-5 text-secondary">
+							<h3 class="text-secondary text-center pb-1 mb-5">Create Post</h3>
 							<form id="createPostForm">
 								<div class="mb-3">
 									<label for="postTitle" class="form-label"
@@ -201,9 +202,12 @@
 									>
 									<input
 										type="text"
+										name="title"
 										class="form-control"
 										id="postTitle"
 										placeholder="Enter post title"
+										required
+										maxlength="50"
 									/>
 								</div>
 								<div class="mb-1">
@@ -212,6 +216,7 @@
 									>
 									<textarea
 										class="form-control"
+										name="body"
 										id="postContent"
 										rows="3"
 										placeholder="Enter post content"
@@ -234,17 +239,20 @@
 										<option value="2">😂 Laughing</option>
 										<option value="3">😍 In Love</option>
 										<option value="4">😎 Chilling</option>
-                                        <option value="5">😢 Sad</option>
-                                        <option value="5">😪 Tired</option>
+										<option value="5">😢 Sad</option>
+										<option value="5">😪 Tired</option>
 									</select>
 
+									<label for="Media"></label>
+									<input
+										type="text"
+										class="form-control"
+										type="url"
+										name="media"
+										placeholder="Image URL"
+									/>
+
 									<button
-										type="button"
-										class="btn px-2 mx-2 btn-outline-secondary"
-									>
-										Media
-									</button>
-                                    <button
 										type="submit"
 										class="btn px-2 btn-outline-secondary"
 									>
@@ -254,7 +262,7 @@
 							</form>
 						</div>
 					</div>
-					<hr class="border-secondary p-2" />
+					<hr class="border-secondary my-5 p-1" />
 					<div class="row d-flex justify-content-center">
 						<div class="search w-50">
 							<form>

@@ -1,1 +1,0 @@
-import * as posts from "../src/js/api/posts/index.mjs"

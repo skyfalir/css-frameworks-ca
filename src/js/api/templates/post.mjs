@@ -1,6 +1,4 @@
 export function postTemplate(postData) {
-
-
 	const postWrapper = document.createElement("div");
 	postWrapper.classList.add("card-body", "mx-auto", "post");
 
@@ -22,37 +20,44 @@ export function postTemplate(postData) {
 	postTitle.innerText = postData.title;
 
 	/* link to post */
-
-	const anchor = document.createElement('a');
-    anchor.href = `/posts?id=${postData.id}`;
+	const anchor = document.createElement("a");
+	anchor.href = '../posts' + `?id=${postData.id}`;
 	anchor.appendChild(postTitle);
 
 	container.appendChild(anchor);
-
 
 	/* Image */
 
 	const postImage = document.createElement("img");
 	postImage.classList.add("img-fluid", "rounded-0", "card-img");
-
+	
 	const Placeholders = [
-		"https://picsum.photos/301",
-		"https://picsum.photos/302",
-		"https://picsum.photos/303",
+	  "https://picsum.photos/301",
+	  "https://picsum.photos/302",
+	  "https://picsum.photos/303",
 	];
-
-	postImage.addEventListener("load", function () {
-		
-	});
-	postImage.addEventListener("error", function () {
-		
-		const randomIndex = Math.floor(Math.random() * Placeholders.length);
-		postImage.src = Placeholders[randomIndex];
-	});
-
-	postImage.src = postData.media;
+	
+	if (isValidImageUrl(postData.media)) {
+	  postImage.src = postData.media;
+	} else {
+	  const randomIndex = Math.floor(Math.random() * Placeholders.length);
+	  postImage.src = Placeholders[randomIndex];
+	}
+	
 	postImage.alt = "Post Image";
+	
 	container.appendChild(postImage);
+	
+	/** 
+	 * Check if image is present or otherwise valid, 
+	 * before replacing with a placeholder. */
+	
+	function isValidImageUrl(url) {
+	  const imageRegex = /\.(jpeg|jpg|gif|png|svg)$/i;
+	  return imageRegex.test(url);
+	}
+	
+	
 
 	/* Body */
 
@@ -86,11 +91,10 @@ export function postTemplate(postData) {
 
 	const commentButton = document.createElement("button");
 	commentButton.classList.add("btn", "btn-sm", "btn-outline-primary");
-
 	commentButton.innerText = "Comment";
 	postButtonsGroup.appendChild(commentButton);
 	postButtonsContainer.appendChild(postButtonsGroup);
-    
+
 	/* Post Stats */
 
 	const postStats = document.createElement("small");
@@ -105,12 +109,13 @@ export function postTemplate(postData) {
 	postComments.classList.add("me-2");
 	postComments.innerText = "5 comments";
 
-
 	postStats.appendChild(postComments);
 	postButtonsContainer.appendChild(postStats);
 	container.appendChild(postButtonsContainer);
+
 	return postWrapper;
 }
+
 export function renderPostTemplate(postData, parent) {
 	parent.append(postTemplate(postData));
 }
