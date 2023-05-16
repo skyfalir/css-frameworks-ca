@@ -4,37 +4,39 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script
-			src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-			async
-		></script>
-		<link rel="stylesheet" href="scss/main.css" />
+		<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script type="module" src="../index.mjs"></script>
+		<link rel="stylesheet" href="../../src/scss/main.css" />
 
-		<title>WIP</title>
+		<title>Peek | login</title>
 	</head>
 	<body class="login-page">
 		<div class="container h-100">
-			<div class="card border border-secondary login p-5 col-10 col-sm-8 position-absolute top-50 start-50 translate-middle">
+			<div
+				class="card border border-secondary login p-5 col-10 col-sm-8 position-absolute top-50 start-50 translate-middle"
+			>
 				<div class="text-center mb-4">
 					<img
-						src="../assets/img/Peek-1.png"
+						src="../../assets/img/Peek-1.png"
 						alt="Logo"
 						width="72"
 						height="72"
 					/>
 				</div>
 
-				<form class="needs-validation" action="/profile">
+				<form id="loginForm" class="needs-validation">
 					<div class="mb-3">
-						<label for="username" class="form-label">Username</label>
+						<label for="email" class="form-label">Email</label>
 						<input
-							type="text"
+							type="email"
 							class="form-control"
-							id="username"
-							name="username"
+							id="email"
+							name="email"
 							required
+							pattern="^[\w\-.]+@(stud.)?noroff.no$"
+							title="Email must be @noroff.no/stud.noroff.no"
 						/>
-						<div class="invalid-feedback">Please enter a username.</div>
+						<div class="invalid-feedback">Email is incorrect.</div>
 					</div>
 					<div class="mb-3">
 						<label for="password" class="form-label">Password</label>
@@ -59,8 +61,11 @@
 						/>
 						<label class="form-check-label" for="remember">Remember me</label>
 					</div>
-					<button type="submit" class="btn btn-secondary w-100">Login</button>
+					<button type="submit" class="btn btn-secondary w-100">
+						login
+					</button>
 				</form>
+				<p class="mb-3 my-3 text-center"> Dont have an account? <br> <a style="color:#33c0c5" href="../register/">Register</a> Instead.</p>
 			</div>
 		</div>
 	</body>
