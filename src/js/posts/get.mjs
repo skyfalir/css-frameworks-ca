@@ -1,5 +1,5 @@
 
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { authFetch } from "./authFetch.mjs";
 
 const actions = "/posts"
@@ -18,7 +18,7 @@ export async function get(id) {
 }
 
 export async function getPosts() {
-    const getPostURL = `${API_SOCIAL_URL}${actions}`;
+    const getPostURL = `${API_SOCIAL_URL}${actions}/`;
 
     const response = await authFetch(getPostURL)
 

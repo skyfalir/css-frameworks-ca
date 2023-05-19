@@ -21,7 +21,8 @@ export function postTemplate(postData) {
 
 	/* link to post */
 	const anchor = document.createElement("a");
-	anchor.href = '../posts' + `?id=${postData.id}`;
+	anchor.href = '../posts/' + `?id=${postData.id}`;
+	anchor.style = 'text-decoration: none';
 	anchor.appendChild(postTitle);
 
 	container.appendChild(anchor);
@@ -85,9 +86,17 @@ export function postTemplate(postData) {
 
 	const likeButton = document.createElement("button");
 	likeButton.classList.add("btn", "btn-sm", "btn-outline-primary");
-
 	likeButton.innerText = "Like";
 	postButtonsGroup.appendChild(likeButton);
+
+	const editButton = document.createElement("button");
+	editButton.classList.add("btn", "btn-sm", "btn-outline-primary");
+	editButton.setAttribute('id', 'editButton');
+	editButton.addEventListener('click', () => {
+		window.location.href = `/posts/edit/?id=${postData.id}`;
+	  });
+	editButton.innerText = "Edit";
+	postButtonsGroup.appendChild(editButton);
 
 	const commentButton = document.createElement("button");
 	commentButton.classList.add("btn", "btn-sm", "btn-outline-primary");
@@ -121,5 +130,9 @@ export function renderPostTemplate(postData, parent) {
 }
 
 export function renderPostTemplates(postDataList, parent) {
+	if (!Array.isArray(postDataList)){
+		console.error('postDataList is not an array')
+		return;
+	}
 	parent.append(...postDataList.map(postTemplate));
 }

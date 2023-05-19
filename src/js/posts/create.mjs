@@ -1,11 +1,11 @@
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { authFetch } from "./authFetch.mjs";
 
 const actions = "/posts"
-const method = "put"
+const method = "post"
 
-export async function update(postData) {
-    const createPostURL = `${API_SOCIAL_URL}${actions}/${postData.id}`
+export async function create(postData) {
+    const createPostURL = API_SOCIAL_URL + actions;
 
     const response = await authFetch(createPostURL, {
         method,

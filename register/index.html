@@ -5,10 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script type="module" src="../index.mjs"></script>
+		<script type="module" src="../profile/index.mjs"></script>
 		<link rel="stylesheet" href="../../src/scss/main.css" />
 
-		<title>Peek | login</title>
+		<title>Peek | Register</title>
 	</head>
 	<body class="login-page">
 		<div class="container h-100">
@@ -24,7 +24,20 @@
 					/>
 				</div>
 
-				<form id="loginForm" class="needs-validation">
+				<form id="registerForm" class="needs-validation">
+					<div class="mb-3">
+						<label for="username" class="form-label">Username</label>
+						<input
+							type="text"
+							class="form-control"
+							id="username"
+							name="name"
+							required
+							pattern="^[\w]+$"
+							title="Username cannot contain symbols or spaces. It can contain numbers, capitalization and -"
+						/>
+						<div class="invalid-feedback">Please enter a username.</div>
+					</div>
 					<div class="mb-3">
 						<label for="email" class="form-label">Email</label>
 						<input
@@ -52,20 +65,12 @@
 							Password must be at least 8 characters.
 						</div>
 					</div>
-					<div class="mb-3 form-check">
-						<input
-							type="checkbox"
-							class="form-check-input"
-							id="remember"
-							name="remember"
-						/>
-						<label class="form-check-label" for="remember">Remember me</label>
-					</div>
 					<button type="submit" class="btn btn-secondary w-100">
-						login
+						Register
 					</button>
 				</form>
-				<p class="mb-3 my-3 text-center"> Dont have an account? <br> <a style="color:#33c0c5" href="../register/">Register</a> Instead.</p>
+				<p class="mb-3 my-3 text-center"> Already have an account? <br> <a style="color:#33c0c5" href="../login/">Login</a> Instead.</p>
+
 			</div>
 		</div>
 	</body>
