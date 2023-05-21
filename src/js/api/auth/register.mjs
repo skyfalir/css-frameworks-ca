@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
 
 /**
- * registers a user profile by sending a POST request to an API URL with the given profile data in JSON format. 
+ * registers a user profile by sending a POST request to an API URL with the given profile data in JSON format.
  *
  * @param {Object} profile - The user profile to be registered.
  * @return {Promise} A Promise that resolves with the JSON response from the API after registering the profile.
@@ -22,6 +22,12 @@ export async function register(profile) {
 		body,
 	});
 
-	const result = await response.json();
-	console.log(result);
+	const json = await response.json();
+
+	if (response.ok) {
+		return json;
+	} else {
+		// Login failed, display error message to user.
+		throw new Error(json.errors[0].message);
+	}
 }

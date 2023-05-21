@@ -1,4 +1,5 @@
 import { register } from '../api/auth/register.mjs';
+import { displayMessage } from '../templates/displayMessage.mjs';
 
 /**
  * Sets a listener on the register form that submits the form data to the server for registration.
@@ -14,8 +15,9 @@ export async function setRegisterFormListener() {
 		const profile = Object.fromEntries(formData.entries());
 		try {
 			await register(profile);
-			window.location.href = '/profile/login/'; // Redirect to /login/ on success
+			window.location.href = '/login/'; // Redirect to /login/ on success
 		} catch (error) {
+			displayMessage('danger', error, '#showError');
 			console.log(error); // Handle error
 		}
 	});
