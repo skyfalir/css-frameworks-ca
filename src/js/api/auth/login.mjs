@@ -1,10 +1,12 @@
 import { API_SOCIAL_URL } from '../constants.mjs';
-import * as storage from '../../handlers/storage/index.mjs';
 
 /**
- * sets up post request with user details.
- * upon successful login, stores access token and profile details and redirects user to their profile.
+ * logs a user in.
+ *
+ * @param {Object} profile - the social profile object to use for login
+ * @return {Promise<Object>} Returns a Promise that resolves with a JSON object containing the response to the request if the login is successful, otherwise throws an Error with the first error message from the JSON response object.
  */
+
 const action = '/auth/login';
 const method = 'post';
 
@@ -20,18 +22,13 @@ export async function login(profile) {
 		body,
 	});
 
-	if (response.ok) {
-		// Login was successful, save token and profile, and redirect user
-		const { accessToken, ...user } = await response.json();
-		storage.save('token', accessToken);
-		storage.save('profile', user);
-		window.location.href = '/feed/';
+		const json = await response.json();
+
+		if (response.ok) {
+
+		return json;
 	} else {
-		// Login failed, display error message to user
-		const showError = document.querySelector('#showError');
-		showError.innerHTML = 'Something went wrong with the login. Please try again.';
-		console.log(
-			`Login failed with status ${response.status}: ${response.statusText}`
-		);
+		// Login failed, display error message to user.
+		throw new Error(json.errors[0].message);
 	}
 }

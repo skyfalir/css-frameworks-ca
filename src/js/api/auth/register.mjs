@@ -1,21 +1,27 @@
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_SOCIAL_URL } from '../constants.mjs';
 
-const action = '/auth/register'
-const method = 'post'
+/**
+ * registers a user profile by sending a POST request to an API URL with the given profile data in JSON format. 
+ *
+ * @param {Object} profile - The user profile to be registered.
+ * @return {Promise} A Promise that resolves with the JSON response from the API after registering the profile.
+ */
 
+const action = '/auth/register';
+const method = 'post';
 
 export async function register(profile) {
-    const registerURL = API_SOCIAL_URL + action;
-    const body = JSON.stringify(profile)
+	const registerURL = API_SOCIAL_URL + action;
+	const body = JSON.stringify(profile);
 
-   const response = await fetch(registerURL, {
-    headers: {
-        "content-Type": "application/json"
-    },
-        method,
-        body
-    })
+	const response = await fetch(registerURL, {
+		headers: {
+			'content-Type': 'application/json',
+		},
+		method,
+		body,
+	});
 
-    const result = await response.json();
-    console.log(result);
+	const result = await response.json();
+	console.log(result);
 }

@@ -27,45 +27,47 @@
 				<div id="showError" class="mb-3 bg-dark text-secondary"></div>
 
 				<form id="loginForm" class="needs-validation">
-					<div class="mb-3">
-						<label for="email" class="form-label">Email</label>
-						<input
-							type="email"
-							class="form-control"
-							id="email"
-							name="email"
-							required
-							pattern="^[\w\-.]+@(stud.)?noroff.no$"
-							title="Email must be @noroff.no/stud.noroff.no"
-						/>
-						<div class="invalid-feedback">Email is incorrect.</div>
-					</div>
-					<div class="mb-3">
-						<label for="password" class="form-label">Password</label>
-						<input
-							type="password"
-							class="form-control"
-							id="password"
-							name="password"
-							minlength="8"
-							required
-						/>
-						<div class="invalid-feedback">
-							Password must be at least 8 characters.
+					<fieldset>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email</label>
+							<input
+								type="email"
+								class="form-control"
+								id="email"
+								name="email"
+								required
+								pattern="^[\w\-.]+@(stud.)?noroff.no$"
+								title="Email must be @noroff.no/stud.noroff.no"
+							/>
+							<div class="invalid-feedback">Email is incorrect.</div>
 						</div>
-					</div>
-					<div class="mb-3 form-check">
-						<input
-							type="checkbox"
-							class="form-check-input"
-							id="remember"
-							name="remember"
-						/>
-						<label class="form-check-label" for="remember">Remember me</label>
-					</div>
-					<button type="submit" class="btn btn-secondary w-100">
-						login
-					</button>
+						<div class="mb-3">
+							<label for="password" class="form-label">Password</label>
+							<input
+								type="password"
+								class="form-control"
+								id="password"
+								name="password"
+								minlength="8"
+								required
+							/>
+							<div class="invalid-feedback">
+								Password must be at least 8 characters.
+							</div>
+						</div>
+						<div class="mb-3 form-check">
+							<input
+								type="checkbox"
+								class="form-check-input"
+								id="remember"
+								name="remember"
+							/>
+							<label class="form-check-label" for="remember">Remember me</label>
+						</div>
+						<button type="submit" class="btn btn-secondary w-100">
+							login
+						</button>
+					</fieldset>
 				</form>
 				<p class="mb-3 my-3 text-center"> Dont have an account? <br> <a style="color:#33c0c5" href="../register/">Register</a> Instead.</p>
 			</div>

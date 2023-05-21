@@ -5808,8 +5808,7 @@ textarea.form-control-lg {
   float: left;
   width: 100%;
   margin-right: -100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10885,4 +10884,8 @@ nav img {
 .emotes {
   min-width: 70px;
   max-width: 70px;
+}
+
+#searchError {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
